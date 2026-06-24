@@ -56,10 +56,10 @@ if (goals != null)
 // Seed Tags
 var tagsPath = Path.Combine(seedDataDir, "tags.json");
 var tagsJson = await File.ReadAllTextAsync(tagsPath);
-var tags = JsonSerializer.Deserialize<List<Models.Tag>>(tagsJson);
+var tags = JsonSerializer.Deserialize<List<Tag>>(tagsJson);
 if (tags != null)
 {
-    var tagsCollection = mongoDatabase.GetCollection<Models.Tag>("Tags");
+    var tagsCollection = mongoDatabase.GetCollection<Tag>("Tags");
     foreach (var tag in tags)
     {
         await tagsCollection.InsertOneAsync(tag);
