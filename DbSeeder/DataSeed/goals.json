@@ -1,0 +1,35 @@
+[
+  {
+    "Id": "667a1b2c3d4e5f6a7b8c9d04",
+    "Name": "Emergency Fund",
+    "TargetAmount": 10000,
+    "TargetDate": "2025-12-31T00:00:00Z",
+    "Balance": 5000.00,
+    "Created": "2024-01-15T00:00:00Z",
+    "TransactionIds": [],
+    "TagIds": ["667a1b2c3d4e5f6a7b8c9d11"],
+    "UserId": "667a1b2c3d4e5f6a7b8c9d01"
+  },
+  {
+    "Id": "667a1b2c3d4e5f6a7b8c9d08",
+    "Name": "New Car",
+    "TargetAmount": 25000,
+    "TargetDate": "2026-06-30T00:00:00Z",
+    "Balance": 12000.50,
+    "Created": "2024-03-20T00:00:00Z",
+    "TransactionIds": ["667a1b2c3d4e5f6a7b8c9d10"],
+    "TagIds": ["667a1b2c3d4e5f6a7b8c9d12"],
+    "UserId": "667a1b2c3d4e5f6a7b8c9d06"
+  },
+  {
+    "Id": "667a1b2c3d4e5f6a7b8c9d09",
+    "Name": "Home Renovation",
+    "TargetAmount": 50000,
+    "TargetDate": "2027-01-15T00:00:00Z",
+    "Balance": 0,
+    "Created": "2024-06-01T00:00:00Z",
+    "TransactionIds": [],
+    "TagIds": [],
+    "UserId": "667a1b2c3d4e5f6a7b8c9d06"
+  }
+]
