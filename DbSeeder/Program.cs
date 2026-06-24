@@ -10,8 +10,6 @@ Console.WriteLine("Seeding database...");
 
 var seedDataDir = Path.Combine(Directory.GetCurrentDirectory(), "..", "CommBank-Server", "DataSeed");
 
-Console.WriteLine("Seeding database...");
-
 // Seed Users
 var usersPath = Path.Combine(seedDataDir, "users.json");
 var usersJson = await File.ReadAllTextAsync(usersPath);
@@ -28,7 +26,7 @@ if (users != null)
 }
 
 // Seed Accounts
-var accountsPath = Path.Combine(dataSeedDir, "accounts.json");
+var accountsPath = Path.Combine(seedDataDir, "accounts.json");
 var accountsJson = await File.ReadAllTextAsync(accountsPath);
 var accounts = JsonSerializer.Deserialize<List<Account>>(accountsJson);
 if (accounts != null)
@@ -42,7 +40,7 @@ if (accounts != null)
 }
 
 // Seed Goals
-var goalsPath = Path.Combine(dataSeedDir, "goals.json");
+var goalsPath = Path.Combine(seedDataDir, "goals.json");
 var goalsJson = await File.ReadAllTextAsync(goalsPath);
 var goals = JsonSerializer.Deserialize<List<Goal>>(goalsJson);
 if (goals != null)
@@ -56,12 +54,12 @@ if (goals != null)
 }
 
 // Seed Tags
-var tagsPath = Path.Combine(dataSeedDir, "tags.json");
+var tagsPath = Path.Combine(seedDataDir, "tags.json");
 var tagsJson = await File.ReadAllTextAsync(tagsPath);
-var tags = JsonSerializer.Deserialize<List<Tag>>(tagsJson);
+var tags = JsonSerializer.Deserialize<List<Models.Tag>>(tagsJson);
 if (tags != null)
 {
-    var tagsCollection = mongoDatabase.GetCollection<Tag>("Tags");
+    var tagsCollection = mongoDatabase.GetCollection<Models.Tag>("Tags");
     foreach (var tag in tags)
     {
         await tagsCollection.InsertOneAsync(tag);
@@ -70,7 +68,7 @@ if (tags != null)
 }
 
 // Seed Transactions
-var transactionsPath = Path.Combine(dataSeedDir, "transactions.json");
+var transactionsPath = Path.Combine(seedDataDir, "transactions.json");
 var transactionsJson = await File.ReadAllTextAsync(transactionsPath);
 var transactions = JsonSerializer.Deserialize<List<Transaction>>(transactionsJson);
 if (transactions != null)
